@@ -20,6 +20,17 @@ ListOfPizzas.prototype.findPizza = function(id) {
   }
   return false;
 };
+
+ListOfPizzas.prototype.calculateTotal = function() {
+  let total = 0;
+  for (let i = 1; i <= this.currentId; i++) {
+    const pizza = this.findPizza(i);
+    console.log(pizza);
+    total += pizza.cost * pizza.quantity;
+    console.log(pizza.cost);
+  }
+  return total;
+};
 // Business logic for Pizza
 function Pizza(toppings, size, quantity, cost) {
   this.toppings = toppings;

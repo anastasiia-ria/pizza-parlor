@@ -76,6 +76,14 @@ let listOfPizzas = new ListOfPizzas();
 listOfPizzas.addPizza(myPizza);
 listOfPizzas.findPizza(1);
 Expected Output: Pizza {toppings: ['chicken', 'pineapple'], size: 'large', quantity: 1, cost: undefined, name: 'Custom Pizza'}
+
+Describe: ListOfPizzas.prototype.calculateTotal
+Code: 
+const myPizza = new Pizza(["chicken","pineapple"], "large", 2, 15);
+let listOfPizzas = new ListOfPizzas();
+listOfPizzas.addPizza(myPizza);
+listOfPizzas.calculateTotal();
+Expected Output: 30
 ## Known Bugs
 
 * 
