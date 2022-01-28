@@ -40,6 +40,15 @@ Code:
 const myPizza = new Pizza(["chicken","pineapple"], "large");
 myPizza.calculatePrice();
 Expected Output: 18;
+
+Describe: ListOfPizzas()
+
+Test: "It should return properties of ListOfPizzas objects"
+Code: 
+let listOfPizzas = new ListOfPizzas();
+listOfPizzas
+Expected Output: ListOfPizzas {pizzas: {…}, currentId: 0}
+
 ## Known Bugs
 
 * 

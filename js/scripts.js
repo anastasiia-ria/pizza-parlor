@@ -1,3 +1,9 @@
+// Business Logic for ListOfPizzas
+function ListOfPizzas() {
+  this.pizzas = {};
+  this.currentId = 0;
+}
+// Business logic for Pizza
 function Pizza(toppings, size) {
   this.toppings = toppings;
   this.size = size;
@@ -24,6 +30,7 @@ Pizza.prototype.calculatePrice = function() {
   return cost;
 };
 
+// User Interface Logic
 $(document).ready(function(){
   $("form#menu").submit(function (event){
     event.preventDefault();
