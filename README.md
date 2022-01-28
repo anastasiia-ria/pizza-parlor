@@ -56,6 +56,16 @@ Code:
 let listOfPizzas = new ListOfPizzas();
 listOfPizzas.assignId();
 Expected Output: 1
+
+Describe: ListOfPizzas.prototype.addPizza
+
+Test: ""It should return a list of pizzas"
+Code:
+const myPizza = new Pizza(["chicken","pineapple"], "large");
+let listOfPizzas = new ListOfPizzas();
+listOfPizzas.addPizza(myPizza);
+listOfPizzas;
+Expected Output: ListOfPizzas {pizzas: {1: Pizza}, currentId: 1}
 ## Known Bugs
 
 * 

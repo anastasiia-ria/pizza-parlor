@@ -4,6 +4,11 @@ function ListOfPizzas() {
   this.currentId = 0;
 }
 
+ListOfPizzas.prototype.addPizza = function(pizza) {
+  pizza.id = this.assignId();
+  this.pizzas[pizza.id] = pizza;
+}
+
 ListOfPizzas.prototype.assignId = function() {
   this.currentId += 1;
   return this.currentId;
