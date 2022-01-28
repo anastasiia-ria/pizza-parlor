@@ -23,3 +23,29 @@ Pizza.prototype.calculatePrice = function() {
   
   return cost;
 };
+
+$(document).ready(function(){
+  $("form#menu").submit(function (event){
+    event.preventDefault();
+    const name = $('input#name').val();
+    const size = $('input[name="size"]:checked').val();
+    const toppings = [];
+
+    $('input[type="checkbox"]').each(function(){
+      if(this.checked) {
+        toppings.push($(this).val());
+      }
+    });
+    console.log(name, size, toppings);
+
+    $(".side-col").show();
+    $("#size").html(size);
+
+    for (let i = 0; i < toppings.length; i++) {
+      $('ul#toppings').append("<li>" + toppings[i] + "</li>")
+    }
+  });
+
+
+
+});
