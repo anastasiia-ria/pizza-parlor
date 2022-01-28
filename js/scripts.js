@@ -43,7 +43,7 @@ function Pizza(toppings, size, quantity, instructions, cost) {
 
 Pizza.prototype.calculatePrice = function(id) {
   const toppingsQuantity = this.toppings.length;
-  let cost = toppingsQuantity * 1.5;
+  let cost = toppingsQuantity * 1;
 
   switch (this.size) {
     case ('small'):
@@ -91,8 +91,7 @@ $(document).ready(function(){
     $('input:not(:checked)').parent().removeClass('checked');
     $('input:checked').parent().addClass('checked');
   });
-
-
+  
   $("form#menu").submit(function (event){
     event.preventDefault();
     const name = $('input#name').val();
@@ -100,13 +99,28 @@ $(document).ready(function(){
     const toppings = [];
     const quantity = parseInt($('select[name="quantity"] option:selected').val());
     const instructions = $('textarea#instructions').val();
-    console.log(instructions);
-    console.log(size);
     $('input[type="checkbox"]').each(function(){
       if(this.checked) {
         toppings.push($(this).val());
       }
     });
+
+    $('input').each(function() {
+      if ($(this).val() === 'small') {
+        $(this).prop('checked',true);
+        $(this).parent().addClass('checked');
+      } else {
+        $(this).prop('checked',false);
+        $(this).parent().removeClass('checked');
+      }
+    });
+
+    $('input[type="checkbox"]').each(function() {
+      $(this).prop('checked',false);
+      $(this).parent().removeClass('checked');
+    });
+
+
 
     $('#order-name').html(name);
     let newPizza = new Pizza(toppings, size, quantity, instructions);
@@ -116,5 +130,34 @@ $(document).ready(function(){
     console.log(newPizza);
     console.log(listOfPizzas);
     displayPizzas(listOfPizzas);
+
+    $('#cart').show();
+    $('#toggle-cart').show();
+
+
+    $('button#place-order').click(function (){
+      $('#main').hide();
+      $('#cart').hide();
+      $('#thank-you').show();
+      $('.name').html(name);
+    });
+
+    $('button#new-order').click(function (){
+      $('#thank-you').hide();
+      $('#main').show();
+      $('#toggle-cart').hide();
+    });
   });
+
+  $('button#new-order').click(function (){
+    $('#thank-you').hide();
+    $('#main').show();
+    $('#toggle-cart').hide();
+
+  });
+
+  $('#toggle-cart').click(function (){
+    $('#cart').toggle();
+  });
+  
 });

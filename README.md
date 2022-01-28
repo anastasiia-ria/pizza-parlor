@@ -29,17 +29,17 @@ Describe: Pizza()
 
 Test: "It should return a Pizza object with two properties for toppings and size"
 Code: 
-const myPizza = new Pizza(["chicken","pineapple"], "large", 1);
+const myPizza = new Pizza(["chicken","pineapple"], "large", 1, "not spicy");
 myPizza
-Expected Output: Pizza {toppings: ['chicken', 'pineapple'], size: 'large', quantity: 1, cost: undefined, name: 'Custom Pizza'}
+Expected Output: Pizza {toppings: ['chicken', 'pineapple'], size: 'large', quantity: 1, instructions: 'not spicy', cost: undefined, name: 'Custom Pizza'}
 
 Describe: Pizza.prototype.calculatePrice
 
 Test: "It should return price based on the size and the qunatity of the toppings"
 Code:
-const myPizza = new Pizza(["chicken","pineapple"], "large", 1);
+const myPizza = new Pizza(["chicken","pineapple"], "large", 1, "not spicy");
 myPizza.calculatePrice();
-Expected Output: 18;
+Expected Output: 17;
 
 Describe: ListOfPizzas()
 
@@ -61,7 +61,7 @@ Describe: ListOfPizzas.prototype.addPizza
 
 Test: "It should return a list of pizzas"
 Code:
-const myPizza = new Pizza(["chicken","pineapple"], "large", 1);
+const myPizza = new Pizza(["chicken","pineapple"], "large", 1, "not spicy");
 let listOfPizzas = new ListOfPizzas();
 listOfPizzas.addPizza(myPizza);
 listOfPizzas;
@@ -71,15 +71,15 @@ Describe: ListOfPizzas.prototype.findPizza
 
 Test: "It should return a piiza object with matching id"
 Code: 
-const myPizza = new Pizza(["chicken","pineapple"], "large", 1);
+const myPizza = new Pizza(["chicken","pineapple"], "large", 1, "not spicy");
 let listOfPizzas = new ListOfPizzas();
 listOfPizzas.addPizza(myPizza);
 listOfPizzas.findPizza(1);
-Expected Output: Pizza {toppings: ['chicken', 'pineapple'], size: 'large', quantity: 1, cost: undefined, name: 'Custom Pizza'}
+Expected Output: Pizza {toppings: ['chicken', 'pineapple'], size: 'large', quantity: 1, instructions: 'not spicy', cost: undefined, name: 'Custom Pizza'}
 
 Describe: ListOfPizzas.prototype.calculateTotal
 Code: 
-const myPizza = new Pizza(["chicken","pineapple"], "large", 2, 15);
+const myPizza = new Pizza(["chicken","pineapple"], "large", 2, "not spicy", 15);
 let listOfPizzas = new ListOfPizzas();
 listOfPizzas.addPizza(myPizza);
 listOfPizzas.calculateTotal();

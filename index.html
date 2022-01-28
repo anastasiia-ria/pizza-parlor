@@ -4,17 +4,19 @@
   <link href="css/styles.css" rel="stylesheet" type="text/css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Oooh+Baby&display=swap" rel="stylesheet">
   <script src="js/jquery-3.6.0.js"></script>
   <script src="js/scripts.js"></script>
   <title>Pizza Parlor</title>
 </head>
 <body>
-  <div class="background">
+  <div class="background" id="main">
     <div class="outer-border">
       <div class="container">
+        <div id="toggle-cart">
+          <img src="img/basket-01.png" alt="cart">
+        </div>
         <h1>Pizza Parlor</h1>
-        <button type="button" id="start">Start an order</button>
         <form id="menu">
           <div class = "form-group full">
             <label for="name" class="label">Name for the order:</label>
@@ -63,7 +65,7 @@
             </label>
           </div>
           <div class="form-group">
-            <label for="quantity">Quantity</label>
+            <label for="quantity">Quantity:</label>
             <select name="quantity" id="quantity">
               <option value="1">1</option>
               <option value="2">2</option>
@@ -78,7 +80,7 @@
             </select>
           </div>
           <div class= "form-group full">
-            <label for="instructions" class="label">Special Instructions</label>
+            <label for="instructions" class="label">Special Instructions:</label>
             <textarea id="instructions"></textarea>
           </div>
           <button type="submit" id="add">Add pizza</button>
@@ -86,16 +88,24 @@
       </div>
     </div>
   </div>
-  <div class="background">
+  <div class="background" id="cart">
     <div class="outer-border">
-      <div class="side-col">
+      <div class="container">
         <h2><span id="order-name"></span>'s Cart</h2>
         <ul id="pizzas">
         </ul>
         <div class="bottom">
           <p>Total: <span class="right">$ <span id="total"></span></span></p>
-          <button type="button" id="order">Place an order</button>
+          <button type="button" id="place-order">Place an order</button>
         </div>
+      </div>
+    </div>
+  </div>
+  <div class="background" id="thank-you">
+    <div class="outer-border">
+      <div class="container">
+        <h2>Thank you for your order,<br><span class="name"></span></h2>
+        <button type="button" id="new-order">New order</button>
       </div>
     </div>
   </div>
