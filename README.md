@@ -49,6 +49,13 @@ let listOfPizzas = new ListOfPizzas();
 listOfPizzas
 Expected Output: ListOfPizzas {pizzas: {…}, currentId: 0}
 
+Describe: ListOfPizzas.prototype.assignId
+
+Test: ""It should return a current id of the pizza object in ListOfPizzas"
+Code: 
+let listOfPizzas = new ListOfPizzas();
+listOfPizzas.assignId();
+Expected Output: 1
 ## Known Bugs
 
 * 

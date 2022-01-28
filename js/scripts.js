@@ -3,6 +3,12 @@ function ListOfPizzas() {
   this.pizzas = {};
   this.currentId = 0;
 }
+
+ListOfPizzas.prototype.assignId = function() {
+  this.currentId += 1;
+  return this.currentId;
+};
+
 // Business logic for Pizza
 function Pizza(toppings, size) {
   this.toppings = toppings;
