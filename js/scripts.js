@@ -7,13 +7,19 @@ function ListOfPizzas() {
 ListOfPizzas.prototype.addPizza = function(pizza) {
   pizza.id = this.assignId();
   this.pizzas[pizza.id] = pizza;
-}
+};
 
 ListOfPizzas.prototype.assignId = function() {
   this.currentId += 1;
   return this.currentId;
 };
 
+ListOfPizzas.prototype.findPizza = function(id) {
+  if (this.pizzas[id] != undefined) {
+    return this.pizzas[id];
+  }
+  return false;
+};
 // Business logic for Pizza
 function Pizza(toppings, size) {
   this.toppings = toppings;

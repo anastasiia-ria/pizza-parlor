@@ -51,7 +51,7 @@ Expected Output: ListOfPizzas {pizzas: {…}, currentId: 0}
 
 Describe: ListOfPizzas.prototype.assignId
 
-Test: ""It should return a current id of the pizza object in ListOfPizzas"
+Test: "It should return a current id of the pizza object in ListOfPizzas"
 Code: 
 let listOfPizzas = new ListOfPizzas();
 listOfPizzas.assignId();
@@ -59,13 +59,23 @@ Expected Output: 1
 
 Describe: ListOfPizzas.prototype.addPizza
 
-Test: ""It should return a list of pizzas"
+Test: "It should return a list of pizzas"
 Code:
 const myPizza = new Pizza(["chicken","pineapple"], "large");
 let listOfPizzas = new ListOfPizzas();
 listOfPizzas.addPizza(myPizza);
 listOfPizzas;
 Expected Output: ListOfPizzas {pizzas: {1: Pizza}, currentId: 1}
+
+Describe: ListOfPizzas.prototype.findPizza
+
+Test: "It should return a piiza object with matching id"
+Code: 
+const myPizza = new Pizza(["chicken","pineapple"], "large");
+let listOfPizzas = new ListOfPizzas();
+listOfPizzas.addPizza(myPizza);
+listOfPizzas.findPizza(1);
+Expected Output: Pizza {toppings: ['chicken', 'pineapple'], size: 'large', id: 1}
 ## Known Bugs
 
 * 
