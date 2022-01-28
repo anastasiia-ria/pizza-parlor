@@ -116,7 +116,11 @@ ul {
 }
 
 .form-group {
-  padding: 10px;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
 }
 
 #quantity {
@@ -129,14 +133,28 @@ ul {
 .label {
   margin-bottom: 10px;
   width: 100%;
-  clear: right;
 }
 
-img {
-  width: 50px;
+.toppings img {
+  width: 60px;
+}
+
+input[type="checkbox"], input[type="radio"] {
+  display:none;
+}
+
+.toppings label{
+  margin:20px;
 }
 
 .checked {
-  border: 1px solid white;
+  border-bottom: 5px solid white;
 }
 
+.pizza-size label{
+  height: 60px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

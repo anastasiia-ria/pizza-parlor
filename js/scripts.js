@@ -87,7 +87,7 @@ function attachPizzaListeners() {
 $(document).ready(function(){
   attachPizzaListeners();
 
-  $('input[type:checkbox]').click(function () {
+  $('input').click(function () {
     $('input:not(:checked)').parent().removeClass('checked');
     $('input:checked').parent().addClass('checked');
   });
