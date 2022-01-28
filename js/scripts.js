@@ -38,6 +38,15 @@ ListOfPizzas.prototype.clear = function() {
   }
   this.currentId = 0;
 }
+
+ListOfPizzas.prototype.deletePizza = function(id) {
+  if (this.pizzas[id] === undefined) {
+    return false;
+  }
+  delete this.pizzas[id];
+  return true;
+}
+
 // Business logic for Pizza
 function Pizza(toppings, size, quantity, instructions, cost) {
   this.toppings = toppings;

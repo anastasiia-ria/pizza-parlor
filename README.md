@@ -78,6 +78,8 @@ listOfPizzas.findPizza(1);
 Expected Output: Pizza {toppings: ['chicken', 'pineapple'], size: 'large', quantity: 1, instructions: 'not spicy', cost: undefined, name: 'Custom Pizza'}
 
 Describe: ListOfPizzas.prototype.calculateTotal
+
+Test: "It will return the total cost of all the pizzas in the list of pizzas"
 Code: 
 const myPizza = new Pizza(["chicken","pineapple"], "large", 2, "not spicy", 15);
 let listOfPizzas = new ListOfPizzas();
@@ -86,12 +88,26 @@ listOfPizzas.calculateTotal();
 Expected Output: 30
 
 Describe:  ListOfPizzas.prototype.clear
+
+Test: "It will delete all the pizzas from the list "
 Code: 
 const myPizza = new Pizza(["chicken","pineapple"], "large", 2, "not spicy", 15);
 let listOfPizzas = new ListOfPizzas();
 listOfPizzas.addPizza(myPizza);
 listOfPizzas.clear();
 Expected Output: ListOfPizzas {pizzas: {…}, currentId: 0}
+
+Describe:  ListOfPizzas.prototype.deletePizza
+
+Test: "It will delete a pizza with passed id"
+Code: 
+const myPizza = new Pizza(["chicken","pineapple"], "large", 2, "not spicy", 15);
+const myPizza2 = new Pizza(["chicken","pineapple"], "large", 2, "not spicy", 15);
+let listOfPizzas = new ListOfPizzas();
+listOfPizzas.addPizza(myPizza);
+listOfPizzas.addPizza(myPizza2);
+listOfPizzas.deletePizza(2);
+Expected Output: true
 ## Known Bugs
 
 * 
