@@ -32,6 +32,14 @@ Code:
 const myPizza = new Pizza(["chicken","pineapple"], "large");
 myPizza
 Expected Output: Pizza {toppings: ['chicken', 'pineapple'], size: 'large'}
+
+Describe: Pizza.prototype.calculatePrice
+
+Test: "It should return price based on the size and the qunatity of the toppings"
+Code:
+const myPizza = new Pizza(["chicken","pineapple"], "large");
+myPizza.calculatePrice();
+Expected Output: 18;
 ## Known Bugs
 
 * 
