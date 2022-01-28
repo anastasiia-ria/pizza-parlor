@@ -45,6 +45,24 @@ button {
   font-size: 1em;
 }
 
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+.pizza-name {
+  padding: 5px;
+  border-bottom: 1px solid #2B292A;
+}
+
 .hidden {
   display: none;
+  border-bottom: none;
+  padding-left: 30px;
+  text-transform: capitalize;
+}
+
+.right {
+  float: right;
+  padding-right: 10px;
 }

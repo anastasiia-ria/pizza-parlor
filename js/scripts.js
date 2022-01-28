@@ -21,21 +21,23 @@ ListOfPizzas.prototype.findPizza = function(id) {
   return false;
 };
 // Business logic for Pizza
-function Pizza(toppings, size) {
+function Pizza(toppings, size, quantity, cost) {
   this.toppings = toppings;
   this.size = size;
+  this.quantity = quantity;
+  this.cost = cost;
   this.name = "Custom Pizza";
 }
 
-Pizza.prototype.calculatePrice = function() {
+Pizza.prototype.calculatePrice = function(id) {
   const toppingsQuantity = this.toppings.length;
   let cost = toppingsQuantity * 1.5;
 
   switch (this.size) {
-    case ("small"):
+    case ('small'):
       cost += 5;
       break;
-    case ("medium"):
+    case ('medium'):
       cost += 10;
       break;
     case ('large'):
@@ -56,7 +58,7 @@ function displayPizzas(listOfPizzasToDisplay) {
   let html = "";
   Object.keys(listOfPizzasToDisplay.pizzas).forEach(function(key) {
     const pizza = listOfPizzasToDisplay.findPizza(key);
-    html += "<li id=" + pizza.id + ">" + pizza.name + "</li><li class='hidden " + pizza.id +"'>Size: " + pizza.size + "</li><li class='hidden " + pizza.id +"'>Toppings: " + pizza.toppings.join(", ") + "</li>";
+    html += "<li class='pizza-name' id=" + pizza.id + ">" + pizza.quantity + " x " + pizza.name + "<span class='right'> $ " + pizza.cost + "</span></li><li class='hidden " + pizza.id +"'>Size: " + pizza.size + "</li><li class='hidden " + pizza.id +"'>Toppings: " + pizza.toppings.join(", ") + "</li>";
   });
   pizzasList.html(html);
 }
@@ -75,20 +77,17 @@ $(document).ready(function(){
     const name = $('input#name').val();
     const size = $('input[name="size"]:checked').val();
     const toppings = [];
-
+    const quantity = parseInt($('input#quantity').val());
+    console.log(quantity);
     $('input[type="checkbox"]').each(function(){
       if(this.checked) {
         toppings.push($(this).val());
       }
     });
 
-    $(".side-col").show();
-    $("#size").html(size);
-
-    for (let i = 0; i < toppings.length; i++) {
-      $('ul#toppings').append("<li>" + toppings[i] + "</li>")
-    }
-    let newPizza = new Pizza(toppings, size);
+    let newPizza = new Pizza(toppings, size, quantity);
+    newPizza.cost = newPizza.calculatePrice();
+    console.log(newPizza.cost);
     listOfPizzas.addPizza(newPizza);
     console.log(newPizza);
     console.log(listOfPizzas);

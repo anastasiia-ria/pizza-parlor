@@ -29,15 +29,15 @@ Describe: Pizza()
 
 Test: "It should return a Pizza object with two properties for toppings and size"
 Code: 
-const myPizza = new Pizza(["chicken","pineapple"], "large");
+const myPizza = new Pizza(["chicken","pineapple"], "large", 1);
 myPizza
-Expected Output: Pizza {toppings: ['chicken', 'pineapple'], size: 'large'}
+Expected Output: Pizza {toppings: ['chicken', 'pineapple'], size: 'large', quantity: 1, cost: undefined, name: 'Custom Pizza'}
 
 Describe: Pizza.prototype.calculatePrice
 
 Test: "It should return price based on the size and the qunatity of the toppings"
 Code:
-const myPizza = new Pizza(["chicken","pineapple"], "large");
+const myPizza = new Pizza(["chicken","pineapple"], "large", 1);
 myPizza.calculatePrice();
 Expected Output: 18;
 
@@ -61,7 +61,7 @@ Describe: ListOfPizzas.prototype.addPizza
 
 Test: "It should return a list of pizzas"
 Code:
-const myPizza = new Pizza(["chicken","pineapple"], "large");
+const myPizza = new Pizza(["chicken","pineapple"], "large", 1);
 let listOfPizzas = new ListOfPizzas();
 listOfPizzas.addPizza(myPizza);
 listOfPizzas;
@@ -71,11 +71,11 @@ Describe: ListOfPizzas.prototype.findPizza
 
 Test: "It should return a piiza object with matching id"
 Code: 
-const myPizza = new Pizza(["chicken","pineapple"], "large");
+const myPizza = new Pizza(["chicken","pineapple"], "large", 1);
 let listOfPizzas = new ListOfPizzas();
 listOfPizzas.addPizza(myPizza);
 listOfPizzas.findPizza(1);
-Expected Output: Pizza {toppings: ['chicken', 'pineapple'], size: 'large', id: 1}
+Expected Output: Pizza {toppings: ['chicken', 'pineapple'], size: 'large', quantity: 1, cost: undefined, name: 'Custom Pizza'}
 ## Known Bugs
 
 * 
