@@ -84,6 +84,14 @@ let listOfPizzas = new ListOfPizzas();
 listOfPizzas.addPizza(myPizza);
 listOfPizzas.calculateTotal();
 Expected Output: 30
+
+Describe:  ListOfPizzas.prototype.clear
+Code: 
+const myPizza = new Pizza(["chicken","pineapple"], "large", 2, "not spicy", 15);
+let listOfPizzas = new ListOfPizzas();
+listOfPizzas.addPizza(myPizza);
+listOfPizzas.clear();
+Expected Output: ListOfPizzas {pizzas: {…}, currentId: 0}
 ## Known Bugs
 
 * 

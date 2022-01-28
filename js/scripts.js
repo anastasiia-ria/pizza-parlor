@@ -31,6 +31,13 @@ ListOfPizzas.prototype.calculateTotal = function() {
   }
   return total;
 };
+
+ListOfPizzas.prototype.clear = function() {
+  for (let i = 1; i <= this.currentId; i++) {
+    delete this.pizzas[i];
+  }
+  this.currentId = 0;
+}
 // Business logic for Pizza
 function Pizza(toppings, size, quantity, instructions, cost) {
   this.toppings = toppings;
