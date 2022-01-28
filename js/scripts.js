@@ -24,6 +24,7 @@ ListOfPizzas.prototype.findPizza = function(id) {
 function Pizza(toppings, size) {
   this.toppings = toppings;
   this.size = size;
+  this.name = "Custom Pizza";
 }
 
 Pizza.prototype.calculatePrice = function() {
@@ -48,7 +49,27 @@ Pizza.prototype.calculatePrice = function() {
 };
 
 // User Interface Logic
+let listOfPizzas = new ListOfPizzas();
+
+function displayPizzas(listOfPizzasToDisplay) {
+  let pizzasList = $("ul#pizzas");
+  let html = "";
+  Object.keys(listOfPizzasToDisplay.pizzas).forEach(function(key) {
+    const pizza = listOfPizzasToDisplay.findPizza(key);
+    html += "<li id=" + pizza.id + ">" + pizza.name + "</li><li class='hidden " + pizza.id +"'>Size: " + pizza.size + "</li><li class='hidden " + pizza.id +"'>Toppings: " + pizza.toppings.join(", ") + "</li>";
+  });
+  pizzasList.html(html);
+}
+
+function attachPizzaListeners() {
+  $("ul#pizzas").on("click", "li", function(){
+    $('.hidden').hide();
+    $('li.' + this.id + '.hidden').toggle();
+  });
+}
+
 $(document).ready(function(){
+  attachPizzaListeners();
   $("form#menu").submit(function (event){
     event.preventDefault();
     const name = $('input#name').val();
@@ -60,7 +81,6 @@ $(document).ready(function(){
         toppings.push($(this).val());
       }
     });
-    console.log(name, size, toppings);
 
     $(".side-col").show();
     $("#size").html(size);
@@ -68,8 +88,10 @@ $(document).ready(function(){
     for (let i = 0; i < toppings.length; i++) {
       $('ul#toppings').append("<li>" + toppings[i] + "</li>")
     }
+    let newPizza = new Pizza(toppings, size);
+    listOfPizzas.addPizza(newPizza);
+    console.log(newPizza);
+    console.log(listOfPizzas);
+    displayPizzas(listOfPizzas);
   });
-
-
-
 });
