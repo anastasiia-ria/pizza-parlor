@@ -3,7 +3,7 @@ body {
   background-size: 300px;
   height: 100vh;
   margin: 0;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -16,21 +16,30 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  background-color: white;
-  height: 70vh;
+  background-color: rgba(43, 41, 42, 0.8);
   text-align: center;
+  padding: 20px 50px;
+  color: white;
 }
 
 .side-col {
   width: 350px;
   height: 70vh;
-  background-color: white;
+  background-color: rgba(43, 41, 42, 0.8);
+  color: white;
   border: black 1px solid;
+  text-align: center;
+  position: relative;
+}
+
+.side-col p {
+  padding: 5px;
+  text-align: left;
+  border-top: white 1px solid;
 }
 
 h1 {
   font-family: 'Fredericka the Great', cursive;
-  color: black;
   text-align: center;
   font-size: 4em;
 }
@@ -48,11 +57,12 @@ button {
 ul {
   padding: 0;
   list-style: none;
+  text-align: left;
 }
 
 .pizza-name {
   padding: 5px;
-  border-bottom: 1px solid #2B292A;
+  border-bottom: 1px solid white;
 }
 
 .hidden {
@@ -65,4 +75,41 @@ ul {
 .right {
   float: right;
   padding-right: 10px;
+}
+
+.bottom {
+  position: absolute;
+  bottom:20px;
+  width: 100%;
+}
+
+#menu {
+  width: 400px;
+}
+
+.full input, .full textarea {
+  width: 200px;
+  font-size: 20px;
+  padding: 7px 10px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  background-color:rgba(43, 41, 42);
+  color: white;
+  border: 1px solid white;
+}
+
+.form-group {
+  padding: 10px;
+}
+
+#quantity {
+  margin-left: 20px;
+  background-color:rgba(43, 41, 42);
+  color: white;
+  padding: 5px 0 5px 5px;
+}
+
+.label {
+  margin-bottom: 10px;
+  width: 100%;
+  clear: right;
 }
