@@ -23,6 +23,15 @@ Web-page for pizza company where a user can choose one or more individual toppin
   $ git clone https://github.com/anastasiia-ria/pizza-parlor.git
   ```
 
+## Specifications
+
+Describe: Pizza()
+
+Test: "It should return a Pizza object with two properties for toppings and size"
+Code: 
+const myPizza = new Pizza(["chicken","pineapple"], "large");
+myPizza
+Expected Output: Pizza {toppings: ['chicken', 'pineapple'], size: 'large'}
 ## Known Bugs
 
 * 
