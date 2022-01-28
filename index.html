@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+  <script src="js/jquery-3.6.0.js"></script>
+  <script src="js/scripts.js"></script>
+  <title>Pizza Parlor</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Pizza Parlor</h1>
+    <button type="button" id="start">Start an order</button>
+    <form id="menu">
+      <div class = "form-group">
+        <label for="name">Your Name</label>
+        <input type="text" id="name">
+      </div>
+      <div class = "form-group">
+        <label for="size">Pizza Size</label>
+        <br>
+        <input type="radio" name="size" value="small">
+        <label>Small</label>
+        <input type="radio" name="size" value="medium">
+        <label>Medium</label>
+        <input type="radio" name="size" value="large">
+        <label>Large</label>
+      </div>
+      <div class = "form-group">
+        <label for="toppings">Select your toppings</label>
+        <br>
+        <input type="checkbox" name="toppings" value="cheese">
+        <label>Cheese</label>
+        <input type="checkbox" name="toppings" value="tomatos">
+        <label>Tomatos</label>
+        <input type="checkbox" name="toppings" value="mushrooms">
+        <label>Mushrooms</label>
+        <input type="checkbox" name="toppings" value="chicken">
+        <label>Chicken</label>
+        <input type="checkbox" name="toppings" value="sausages">
+        <label>Sausages</label>
+        <input type="checkbox" name="toppings" value="pepperoni">
+        <label>Pepperoni</label>
+        <input type="checkbox" name="toppings" value="peppers">
+        <label>Peppers</label>
+        <input type="checkbox" name="toppings" value="basil">
+        <label>Basil</label>
+      </div>
+      <div class= "form-group">
+        <label for="instructions">Special Instructions</label>
+        <br>
+        <textarea></textarea>
+      </div>
+      <button type="submit" id="add">Add pizza</button>
+    </form>
+  </div>
+  <div class="side-col">
+    <h2>Cart</h2>
+    <ul id="pizza">
+      <li>Size: <span id="size"></span></li>
+      <li>Toppings:</li>
+      <ul id="toppings">
+      </ul>
+    </ul>
+    <button type="button" id="order">Place an order</button>
+  </div>
+</body>
+</html>

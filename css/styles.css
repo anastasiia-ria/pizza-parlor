@@ -1,0 +1,46 @@
+body {
+  background-image: url('../img/background.jpg');
+  background-size: 300px;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: white;
+  height: 70vh;
+  text-align: center;
+}
+
+.side-col {
+  width: 350px;
+  height: 70vh;
+  background-color: white;
+  border: black 1px solid;
+}
+
+h1 {
+  font-family: 'Fredericka the Great', cursive;
+  color: black;
+  text-align: center;
+  font-size: 4em;
+}
+
+button {
+  padding: 10px 20px;
+  border: white 2px solid;
+  color: white;
+  background-color: #2B292A;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1em;
+}
