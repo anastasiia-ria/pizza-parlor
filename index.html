@@ -10,73 +10,89 @@
   <title>Pizza Parlor</title>
 </head>
 <body>
-  <div class="container">
-    <h1>Pizza Parlor</h1>
-    <button type="button" id="start">Start an order</button>
-    <form id="menu">
-      <div class = "form-group full">
-        <label for="name" class="label">Name for the order:</label>
-        <input type="text" id="name" required>
+  <div class="background">
+    <div class="outer-border">
+      <div class="container">
+        <h1>Pizza Parlor</h1>
+        <button type="button" id="start">Start an order</button>
+        <form id="menu">
+          <div class = "form-group full">
+            <label for="name" class="label">Name for the order:</label>
+            <input type="text" id="name" required>
+          </div>
+          <div class = "form-group">
+            <label for="size" class="label">Pizza Size</label>
+            <input type="radio" name="size" value="small" checked>
+            <label>Small</label>
+            <input type="radio" name="size" value="medium">
+            <label>Medium</label>
+            <input type="radio" name="size" value="large">
+            <label>Large</label>
+          </div>
+          <div class = "form-group">
+            <label for="toppings" class="label">Select your toppings</label>
+            
+            <label><img src="img/toppings/cheese-01.png" alt="cheese">
+              <input type="checkbox" name="toppings" value="cheese">
+            </label> 
+            <label><img src="img/toppings/tomato-01.png" alt="tomato">
+              <input type="checkbox" name="toppings" value="tomato">
+            </label>  
+            <label><img src="img/toppings/mushroom-01.png" alt="mushroom">
+              <input type="checkbox" name="toppings" value="mushroom">
+            </label>
+            <label><img src="img/toppings/chicken-01.png" alt="chicken">
+              <input type="checkbox" name="toppings" value="chicken">
+            </label>
+            <label><img src="img/toppings/sausage-01.png" alt="sausage">
+              <input type="checkbox" name="toppings" value="pepperoni">
+            </label>
+            <label><img src="img/toppings/pepperoni-01.png" alt="pepperoni">
+              <input type="checkbox" name="toppings" value="peppers">
+            </label>
+            <label><img src="img/toppings/pepper-01.png" alt="pepper">
+              <input type="checkbox" name="toppings" value="pineapple">
+            </label>
+            <label><img src="img/toppings/pineapple-01.png" alt="pineapple">
+              <input type="checkbox" name="toppings" value="cheese">
+            </label>
+          </div>
+          <div class="form-group">
+            <label for="quantity">Quantity</label>
+            <select name="quantity" id="quantity">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+          </div>
+          <div class= "form-group full">
+            <label for="instructions" class="label">Special Instructions</label>
+            <textarea id="instructions"></textarea>
+          </div>
+          <button type="submit" id="add">Add pizza</button>
+        </form>
       </div>
-      <div class = "form-group">
-        <label for="size" class="label">Pizza Size</label>
-        <input type="radio" name="size" value="small" checked>
-        <label>Small</label>
-        <input type="radio" name="size" value="medium">
-        <label>Medium</label>
-        <input type="radio" name="size" value="large">
-        <label>Large</label>
-      </div>
-      <div class = "form-group">
-        <label for="toppings" class="label">Select your toppings</label>
-        <input type="checkbox" name="toppings" value="cheese">
-        <label>Cheese</label>
-        <input type="checkbox" name="toppings" value="tomatos">
-        <label>Tomatos</label>
-        <input type="checkbox" name="toppings" value="mushrooms">
-        <label>Mushrooms</label>
-        <input type="checkbox" name="toppings" value="chicken">
-        <label>Chicken</label>
-        <input type="checkbox" name="toppings" value="sausages">
-        <label>Sausages</label>
-        <input type="checkbox" name="toppings" value="pepperoni">
-        <label>Pepperoni</label>
-        <input type="checkbox" name="toppings" value="peppers">
-        <label>Peppers</label>
-        <input type="checkbox" name="toppings" value="basil">
-        <label>Basil</label>
-      </div>
-      <div class="form-group">
-        <label for="quantity">Quantity</label>
-        <select name="quantity" id="quantity">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="10">10</option>
-        </select>
-      </div>
-      <div class= "form-group full">
-        <label for="instructions" class="label">Special Instructions</label>
-        <textarea id="instructions"></textarea>
-      </div>
-      <button type="submit" id="add">Add pizza</button>
-    </form>
-  </div>
-  <div class="side-col">
-    <h2><span id="order-name"></span>'s Cart</h2>
-    <ul id="pizzas">
-    </ul>
-    <div class="bottom">
-      <p>Total: <span class="right">$ <span id="total"></span></span></p>
-      <button type="button" id="order">Place an order</button>
     </div>
-    
+  </div>
+  <div class="background">
+    <div class="outer-border">
+      <div class="side-col">
+        <h2><span id="order-name"></span>'s Cart</h2>
+        <ul id="pizzas">
+        </ul>
+        <div class="bottom">
+          <p>Total: <span class="right">$ <span id="total"></span></span></p>
+          <button type="button" id="order">Place an order</button>
+        </div>
+      </div>
+    </div>
   </div>
 </body>
 </html>

@@ -5,29 +5,45 @@ body {
   margin: 0;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: flex-end;
 }
 
-.container {
-  max-width: 600px;
+.background {
   margin: auto;
+  background-image: url('../img/chalkboard.png');
+  background-position: right;;
+  background-size: cover;
+  background-color: rgba(43, 41, 42, 0.8);
+  padding: 20px;
+}
+
+.outer-border{
+  border:1px solid white;
+  padding: 5px;
+}
+
+.container {
+  border:5px solid white;
+  padding: 20px;
+  height: 70vh;
+  min-height: 700px; 
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  background-color: rgba(43, 41, 42, 0.8);
   text-align: center;
-  padding: 20px 50px;
   color: white;
 }
 
 .side-col {
   width: 350px;
   height: 70vh;
-  background-color: rgba(43, 41, 42, 0.8);
+  min-height: 700px; 
+  border:5px solid white;
+  padding: 20px;;
   color: white;
-  border: black 1px solid;
   text-align: center;
   position: relative;
 }
@@ -42,6 +58,8 @@ h1 {
   font-family: 'Fredericka the Great', cursive;
   text-align: center;
   font-size: 4em;
+  margin: 0;
+  padding-bottom: 20px;
 }
 
 button {
@@ -80,7 +98,7 @@ ul {
 .bottom {
   position: absolute;
   bottom:20px;
-  width: 100%;
+  width: calc(100% - 40px);
 }
 
 #menu {
@@ -113,3 +131,12 @@ ul {
   width: 100%;
   clear: right;
 }
+
+img {
+  width: 50px;
+}
+
+.checked {
+  border: 1px solid white;
+}
+
