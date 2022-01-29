@@ -109,10 +109,14 @@ function defaultColor() {
     let value = $(this).val();
     if (value === "small") {
       $(this).prop("checked", true);
-      $(this).prev("img").attr("src", "../img/size/colored/" + value + ".png");
+      $(this)
+        .prev("img")
+        .attr("src", "../img/size/colored/" + value + ".png");
     } else {
       $(this).prop("checked", false);
-      $(this).prev("img").attr("src", "../img/size/" + value + ".png");
+      $(this)
+        .prev("img")
+        .attr("src", "../img/size/" + value + ".png");
     }
   });
 
@@ -120,17 +124,23 @@ function defaultColor() {
     let value = $(this).val();
     if (value === "pepperoni") {
       $(this).prop("checked", true);
-      $(this).prev("img").attr("src", "../img/pizza/colored/" + value + ".png");
+      $(this)
+        .prev("img")
+        .attr("src", "../img/pizza/colored/" + value + ".png");
     } else {
       $(this).prop("checked", false);
-      $(this).prev("img").attr("src", "../img/pizza/" + value + ".png");
+      $(this)
+        .prev("img")
+        .attr("src", "../img/pizza/" + value + ".png");
     }
   });
 
   $('input[name="topping"]').each(function () {
     let value = $(this).val();
     $(this).prop("checked", false);
-    $(this).prev("img").attr("src", "../img/topping/" + value + ".png");
+    $(this)
+      .prev("img")
+      .attr("src", "../img/topping/" + value + ".png");
   });
 }
 //Colorize checked input on click
@@ -138,14 +148,22 @@ function colorizeOnClick() {
   $('input[name = "topping"]').click(function () {
     let name = $(this).attr("name");
     let value = $(this).val();
-    $("input[name=" + name + "]#" + value + ":not(:checked)").prev("img").attr("src", "../img/" + name + "/" + value + ".png");
-    $("input[name=" + name + "]#" + value + ":checked").prev("img").attr("src", "../img/" + name + "/colored/" + value + ".png");
+    $("input[name=" + name + "]#" + value + ":not(:checked)")
+      .prev("img")
+      .attr("src", "../img/" + name + "/" + value + ".png");
+    $("input[name=" + name + "]#" + value + ":checked")
+      .prev("img")
+      .attr("src", "../img/" + name + "/colored/" + value + ".png");
   });
 
   $('input[name="pizza').click(function () {
     let value = $(this).val();
-    $('input[name="pizza"]:not(:checked)').prev("img").attr("src", "../img/pizza/" + value + ".png");
-    $('input[name="pizza"]:checked').prev("img").attr("src", "../img/pizza/colored/" + value + ".png");
+    $('input[name="pizza"]:not(:checked)')
+      .prev("img")
+      .attr("src", "../img/pizza/" + value + ".png");
+    $('input[name="pizza"]:checked')
+      .prev("img")
+      .attr("src", "../img/pizza/colored/" + value + ".png");
   });
 
   $('input[name="size').click(function () {
@@ -153,7 +171,9 @@ function colorizeOnClick() {
     $('input[name="size"]#small:not(:checked)').prev("img").attr("src", "../img/size/small.png");
     $('input[name="size"]#medium:not(:checked)').prev("img").attr("src", "../img/size/medium.png");
     $('input[name="size"]#large:not(:checked)').prev("img").attr("src", "../img/size/large.png");
-    $('input[name="size"]:checked').prev("img").attr("src", "../img/size/colored/" + value + ".png");
+    $('input[name="size"]:checked')
+      .prev("img")
+      .attr("src", "../img/size/colored/" + value + ".png");
   });
 }
 //Display customer details
@@ -286,7 +306,9 @@ $(document).ready(function () {
     listOfPizzas.customer = newCustomer;
 
     $("#delivery-option").hide();
+    $("#delivery").hide();
     $("#menu").show();
+    $("#order-delivery").html("Delivery");
   });
 
   $("#pick-up").submit(function (event) {
@@ -299,7 +321,9 @@ $(document).ready(function () {
     listOfPizzas.customer = newCustomer;
 
     $("#delivery-option").hide();
+    $("#pick-up").hide();
     $("#menu").show();
+    $("#order-delivery").html("Pick Up");
   });
   //open or close custom pizza toppings
   $("#custom-pizza").click(function () {

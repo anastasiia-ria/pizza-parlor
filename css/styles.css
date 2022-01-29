@@ -66,6 +66,15 @@ h4 {
   text-transform: lowercase;
 }
 
+p {
+  text-align: left;
+}
+
+img {
+  width: 60px;
+  padding-bottom: 10px;
+}
+
 button {
   padding: 10px 0;
   border: white 2px solid;
@@ -97,11 +106,28 @@ input[type="radio"] {
   display: none;
 }
 
+label {
+  padding: 0 20px;
+  font-size: 1.25em;
+  font-weight: bold;
+  font-family: "Rhodyn Chalk", cursive;
+}
+
 .hidden {
   display: none;
   border-bottom: none;
   padding-left: 30px;
   text-transform: capitalize;
+}
+
+#toppings,
+#start,
+#delivery,
+#pick-up,
+#menu,
+#thank-you,
+#cart {
+  display: none;
 }
 
 .buttons {
@@ -119,7 +145,7 @@ input[type="radio"] {
 }
 
 .bottom p,
-#thank-you p {
+#order-total {
   padding: 5px;
   text-align: left;
   border-top: white 1px solid;
@@ -162,6 +188,7 @@ input[type="radio"] {
 }
 
 /*Menu styles*/
+
 #main {
   position: relative;
 }
@@ -192,13 +219,6 @@ input[type="radio"] {
   align-items: center;
   padding: 20px 0;
   max-width: 490px;
-}
-
-label {
-  padding: 0 20px;
-  font-size: 1.25em;
-  font-weight: bold;
-  font-family: "Rhodyn Chalk", cursive;
 }
 
 .option {
@@ -232,15 +252,6 @@ textarea,
   padding-bottom: 10px;
 }
 
-img {
-  width: 60px;
-  padding-bottom: 10px;
-}
-
-.checked {
-  border-bottom: 5px solid white;
-}
-
 #toggle-cart {
   position: absolute;
   right: 10px;
@@ -253,6 +264,7 @@ img {
 }
 
 /*Delivery options styles*/
+
 #delivery input {
   width: 80%;
 }
@@ -265,19 +277,7 @@ img {
   margin: auto;
 }
 
-#toppings,
-#start,
-#delivery,
-#pick-up,
-#menu,
-#thank-you,
-#cart {
-  display: none;
-}
-
-.flex {
-  display: flex;
-}
+/*Thank you box styles*/
 
 #thank-you {
   text-transform: capitalize;
