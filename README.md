@@ -111,7 +111,7 @@ Expected Output: true
 
 Describe: ListOfPizzas.prototype.checkIfEmpty
 
-Test: "it will reutn true if there are no pizzas in the pizzas list"  
+Test: "It will return "true" if there are no pizzas in the pizzas list"  
 Code:  
 let listOfPizzas = new ListOfPizzas();  
 listOfPizzas.checkIfEmpty();  
