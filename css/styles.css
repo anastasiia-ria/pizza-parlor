@@ -34,6 +34,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: stretch;
+  height: 100%;
+  position: relative;
 }
 
 .container {
@@ -45,7 +47,6 @@ body {
   align-items: center;
   text-align: center;
   color: white;
-  position: relative;
   height: 100%;
 }
 
@@ -66,13 +67,14 @@ h4 {
 }
 
 button {
-  padding: 10px 20px;
+  padding: 10px 0;
   border: white 2px solid;
   color: white;
   background-color: transparent;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 1em;
+  width: 140px;
 }
 
 button,
@@ -102,16 +104,21 @@ input[type="radio"] {
   text-transform: capitalize;
 }
 
+.buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
 /* Cart styles */
 
 #cart {
-  min-width: 275px;
+  width: 300px;
   color: white;
   text-align: center;
   height: 100%;
 }
 
-#cart p,
+.bottom p,
 #thank-you p {
   padding: 5px;
   text-align: left;
@@ -139,7 +146,7 @@ input[type="radio"] {
 .bottom {
   position: absolute;
   bottom: 20px;
-  width: calc(100% - 40px);
+  width: 300px;
 }
 
 .remove {
@@ -148,12 +155,17 @@ input[type="radio"] {
   float: left;
 }
 
-.buttons {
-  display: flex;
-  justify-content: space-around;
+#error {
+  color: red;
+  border-top: 1px solid transparent;
+  display: none;
 }
 
 /*Menu styles*/
+#main {
+  position: relative;
+}
+
 #menu {
   min-width: 500px;
 }

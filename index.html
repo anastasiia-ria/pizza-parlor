@@ -17,8 +17,10 @@
             <h1>Pizza Parlor</h1>
             <div id="delivery-option">
               <h2>How would you like to get your order?</h2>
-              <button id="pick-up-button">Pick Up</button>
-              <button id="delivery-button">Delivery</button>
+              <div class="buttons">
+                <button id="pick-up-button">Pick Up</button>
+                <button id="delivery-button">Delivery</button>
+              </div>
               <form id="delivery">
                 <div class="form-group">
                   <input type="text" id="del-name" placeholder="Full Name" required />
@@ -142,12 +144,15 @@
                 <label for="instructions" class="label option">special instructions:</label>
                 <textarea id="instructions"></textarea>
               </div>
-              <button type="button" id="back">Back</button>
-              <button type="submit" id="add">Add pizza</button>
+              <div class="buttons">
+                <button type="button" id="back">Back</button>
+                <button type="submit" id="add">Add pizza</button>
+              </div>
             </form>
           </div>
           <div class="container" id="cart">
             <h2><span class="name"></span>'s Cart</h2>
+            <p id="error">Your cart is empty</p>
             <ul id="pizzas"></ul>
             <div class="bottom">
               <p>

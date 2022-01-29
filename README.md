@@ -47,7 +47,7 @@ Test: "It should return properties of ListOfPizzas objects"
 Code:  
 let listOfPizzas = new ListOfPizzas();  
 listOfPizzas;  
-Expected Output: ListOfPizzas {pizzas: {…}, currentId: 0}
+Expected Output: ListOfPizzas {customer: undefined, pizzas: {…}, currentId: 0}
 
 Describe: ListOfPizzas.prototype.assignId
 
@@ -65,7 +65,7 @@ const myPizza = new Pizza(["chicken","pineapple"], "large", 1, "not spicy", "Cus
 let listOfPizzas = new ListOfPizzas();  
 listOfPizzas.addPizza(myPizza);  
 listOfPizzas;  
-Expected Output: ListOfPizzas {pizzas: {1: Pizza}, currentId: 1}
+Expected Output: ListOfPizzas {customer: undefined, pizzas: {1: Pizza}, currentId: 1}
 
 Describe: ListOfPizzas.prototype.findPizza
 
@@ -95,7 +95,7 @@ const myPizza = new Pizza(["chicken","pineapple"], "large", 1, "not spicy", "Cus
 let listOfPizzas = new ListOfPizzas();  
 listOfPizzas.addPizza(myPizza);  
 listOfPizzas.clear();  
-Expected Output: ListOfPizzas {pizzas: {…}, currentId: 0}
+Expected Output: ListOfPizzas {customer: undefined, pizzas: {…}, currentId: 0}
 
 Describe:  ListOfPizzas.prototype.deletePizza
 
