@@ -9,6 +9,7 @@
 * CSS
 * HTML
 * JavaScript
+* jQuery
 
 ## Description
 
@@ -16,12 +17,24 @@ Web-page for pizza company where a user can choose one or more individual toppin
 
 ## Setup/Installation Requirements
 
-* [GitHub Page](https://anastasiia-ria.github.io/pizza-parlor/)
-* [GitHub Repository](https://github.com/anastasiia-ria/pizza-parlor)
-* Command line to clone:
-  ```
-  $ git clone https://github.com/anastasiia-ria/pizza-parlor.git
-  ```
+* Click on or copy and paste this [GitHub Page](https://anastasiia-ria.github.io/pizza-parlor/) into your preferred browser:<br>https://anastasiia-ria.github.io/neighbor/
+
+  ***OR***
+
+* Clone this repository to your Desktop:
+  1. Your computer will need to have GIT installed. If you do not currently have GIT installed, follow [these](https://docs.github.com/en/get-started/quickstart/set-up-git) directions for installing and setting up GIT.
+  2. Once GIT is installed, clone this repository by typing following commands in your browser:
+      ```
+      $ cd ~/Desktop
+      $ git clone https://github.com/anastasiia-ria/pizza-parlor.git
+      ```
+  3. Open index.html by typing following command: 
+      ```
+      $ open ~/Desktop/pizza-parlor/index.html
+      ```
+      ***OR***
+
+      Open "pizza-parlor" folder on your desktop and open "index.html" file in your browser.
 
 ## Specifications
 
@@ -126,7 +139,7 @@ myCustomer;
 Expected Output: Customer {name: 'name', street: 'street', city: 'city', zipcode: 'zipcode'}
 ## Known Bugs
 
-* 
+* Layout is not adjusted for small screens
 
 ## License
 
