@@ -109,7 +109,16 @@ listOfPizzas.addPizza(myPizza2);
 listOfPizzas.deletePizza(2);  
 Expected Output: true
 
+Describe: ListOfPizzas.prototype.checkIfEmpty
+
+Test: "it will reutn true if there are no pizzas in the pizzas list"  
+Code:  
+let listOfPizzas = new ListOfPizzas();  
+listOfPizzas.checkIfEmpty();  
+Expected Output: true
+
 Describe: Customer()
+
 Test: "It should return a Customer object with two properties for name, street, city, and zipcode"  
 Code:  
 const myCustomer = new Customer("name", "street", "city", "zipcode");  
