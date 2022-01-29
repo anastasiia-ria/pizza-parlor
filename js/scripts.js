@@ -111,12 +111,12 @@ function defaultColor() {
       $(this).prop("checked", true);
       $(this)
         .prev("img")
-        .attr("src", "../img/size/colored/" + value + ".png");
+        .attr("src", "img/size/colored/" + value + ".png");
     } else {
       $(this).prop("checked", false);
       $(this)
         .prev("img")
-        .attr("src", "../img/size/" + value + ".png");
+        .attr("src", "img/size/" + value + ".png");
     }
   });
 
@@ -126,12 +126,12 @@ function defaultColor() {
       $(this).prop("checked", true);
       $(this)
         .prev("img")
-        .attr("src", "../img/pizza/colored/" + value + ".png");
+        .attr("src", "img/pizza/colored/" + value + ".png");
     } else {
       $(this).prop("checked", false);
       $(this)
         .prev("img")
-        .attr("src", "../img/pizza/" + value + ".png");
+        .attr("src", "img/pizza/" + value + ".png");
     }
   });
 
@@ -140,7 +140,7 @@ function defaultColor() {
     $(this).prop("checked", false);
     $(this)
       .prev("img")
-      .attr("src", "../img/topping/" + value + ".png");
+      .attr("src", "img/topping/" + value + ".png");
   });
 }
 //Colorize checked input on click
@@ -150,30 +150,30 @@ function colorizeOnClick() {
     let value = $(this).val();
     $("input[name=" + name + "]#" + value + ":not(:checked)")
       .prev("img")
-      .attr("src", "../img/" + name + "/" + value + ".png");
+      .attr("src", "img/" + name + "/" + value + ".png");
     $("input[name=" + name + "]#" + value + ":checked")
       .prev("img")
-      .attr("src", "../img/" + name + "/colored/" + value + ".png");
+      .attr("src", "img/" + name + "/colored/" + value + ".png");
   });
 
   $('input[name="pizza').click(function () {
     let value = $(this).val();
     $('input[name="pizza"]:not(:checked)')
       .prev("img")
-      .attr("src", "../img/pizza/" + value + ".png");
+      .attr("src", "img/pizza/" + value + ".png");
     $('input[name="pizza"]:checked')
       .prev("img")
-      .attr("src", "../img/pizza/colored/" + value + ".png");
+      .attr("src", "img/pizza/colored/" + value + ".png");
   });
 
   $('input[name="size').click(function () {
     let value = $(this).val();
-    $('input[name="size"]#small:not(:checked)').prev("img").attr("src", "../img/size/small.png");
-    $('input[name="size"]#medium:not(:checked)').prev("img").attr("src", "../img/size/medium.png");
-    $('input[name="size"]#large:not(:checked)').prev("img").attr("src", "../img/size/large.png");
+    $('input[name="size"]#small:not(:checked)').prev("img").attr("src", "img/size/small.png");
+    $('input[name="size"]#medium:not(:checked)').prev("img").attr("src", "img/size/medium.png");
+    $('input[name="size"]#large:not(:checked)').prev("img").attr("src", "img/size/large.png");
     $('input[name="size"]:checked')
       .prev("img")
-      .attr("src", "../img/size/colored/" + value + ".png");
+      .attr("src", "img/size/colored/" + value + ".png");
   });
 }
 //Display customer details
