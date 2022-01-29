@@ -86,7 +86,7 @@ function displayPizzas(listOfPizzasToDisplay) {
   let html = "";
   Object.keys(listOfPizzasToDisplay.pizzas).forEach(function(key) {
     const pizza = listOfPizzasToDisplay.findPizza(key);
-    html += "<li class='pizza-name' id=" + pizza.id + ">" + pizza.quantity + " x " + pizza.name + "<span class='right'> $ " + pizza.cost + ".00</span></li><li class='hidden " + pizza.id +"'>Size: " + pizza.size + "</li><li class='hidden " + pizza.id +"'>Toppings: " + pizza.toppings.join(", ") + "</li><li class='hidden " + pizza.id +"'>Special Instructions: " + pizza.instructions + "</li>";
+    html += "<span class=" + pizza.id + " 'remove'> X</span><li class='pizza-name' id=" + pizza.id + ">" + pizza.quantity + " x " + pizza.name + "<span class='right'> $ " + pizza.cost + ".00</span></li><li class='hidden " + pizza.id +"'>Size: " + pizza.size + "</li><li class='hidden " + pizza.id +"'>Toppings: " + pizza.toppings.join(", ") + "</li><li class='hidden " + pizza.id +"'>Special Instructions: " + pizza.instructions + "</li>";
     console.log(pizza.instructions);
   });
   pizzasList.html(html);
@@ -136,8 +136,6 @@ $(document).ready(function(){
       $(this).parent().removeClass('checked');
     });
 
-
-
     $('#order-name').html(name);
     let newPizza = new Pizza(toppings, size, quantity, instructions);
     newPizza.cost = newPizza.calculatePrice();
@@ -175,6 +173,13 @@ $(document).ready(function(){
 
   $('#toggle-cart').click(function (){
     $('#cart').toggle();
+  });
+
+  $(".remove").click(function(){
+    let id = $(this).parent().attr("id");
+    listOfPizzas.deletePizza(id);
+    $('#' + id).clear();
+    console.log("clear");
   });
   
 });

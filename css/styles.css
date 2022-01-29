@@ -110,6 +110,9 @@ input[type="checkbox"], input[type="radio"] {
   width: calc(100% - 40px);
 }
 
+.remove {
+  color: red;
+}
 /*Menu styles*/
 #menu {
   min-width: 400px;
