@@ -13,7 +13,7 @@ body {
 .background {
   margin: auto;
   background-image: url('../img/chalkboard.png');
-  background-position: right;
+  background-position: top;
   background-size: cover;
   background-color: rgba(43, 41, 42, 0.8);
   padding: 20px;
@@ -120,9 +120,35 @@ input[type="checkbox"], input[type="radio"] {
   float: left;
 }
 
+.buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+/*Delivery options styles*/
+#delivery input{
+  width: 80%;
+}
+
+#delivery input::placeholder{
+  color: white;
+}
+
+#start {
+  margin: auto;
+}
 /*Menu styles*/
 #menu {
-  min-width: 400px;
+  min-width: 500px;
+}
+
+.pizzas label,
+.pizza-size label {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 15px;
+
 }
 
 .form-group {
@@ -141,11 +167,12 @@ label {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.full {
-  align-items: flex-end;
+.option {
+  font-family: 'Oooh Baby', cursive;
+  font-size: 25px;
 }
 
-.full input, textarea {
+#name, textarea {
   width: 200px;
   height: 30px;
   padding-left: 10px;
@@ -156,13 +183,6 @@ label {
   color: white;
   border-bottom: 1px solid white;
   font-family: 'Oooh Baby', cursive;
-}
-
-.pizza-size label{
-  height: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 #quantity {
@@ -176,7 +196,11 @@ label {
   padding-bottom: 10px;
 }
 
-.toppings img {
+.toppings, #start, #delivery, #pick-up, #menu {
+  display: none;
+}
+
+img {
   width: 60px;
 }
 

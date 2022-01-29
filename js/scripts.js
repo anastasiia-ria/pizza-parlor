@@ -1,3 +1,10 @@
+//Business Logic for Customer
+function Customer(name, street, city, zipcode) {
+  this.name = name;
+  this.street = street;
+  this.city = city;
+  this.zipcode = zipcode;
+}
 // Business Logic for ListOfPizzas
 function ListOfPizzas() {
   this.pizzas = {};
@@ -48,13 +55,13 @@ ListOfPizzas.prototype.deletePizza = function(id) {
 }
 
 // Business logic for Pizza
-function Pizza(toppings, size, quantity, instructions, cost) {
+function Pizza(toppings, size, quantity, instructions, name, cost) {
   this.toppings = toppings;
   this.size = size;
   this.quantity = quantity;
   this.instructions = instructions;
+  this.name = name;
   this.cost = cost;
-  this.name = "Custom Pizza";
 }
 
 Pizza.prototype.calculatePrice = function(id) {
@@ -121,7 +128,8 @@ function attachPizzaListeners() {
     let id = ($(this).attr('class'));
     listOfPizzas.deletePizza(id);
     $('#' + id).remove();
-    $('.' + id).remove();
+    $('li.' + id).remove();
+    $(this).remove();
     $("#total").html(listOfPizzas.calculateTotal() + ".00");
   });
 }
@@ -129,11 +137,39 @@ function attachPizzaListeners() {
 $(document).ready(function(){
   attachPizzaListeners();
 
-  $('input').click(function () {
+  $('input').click(function(){
     $('input:not(:checked)').parent().removeClass('checked');
     $('input:checked').parent().addClass('checked');
   });
   
+  $('#pick-up-button').click(function(event) {
+    event.preventDefault();
+    $("#pick-up").slideDown();
+    $("#delivery").slideUp();
+    $('#start').show();
+  });
+
+  $('#delivery-button').click(function() {
+    $("#delivery").slideDown();
+    $("#pick-up").slideUp();
+    $('#start').show();
+  });
+
+  $('#delivery-option').submit(function(event){
+    event.preventDefault();
+    $('#delivery-option').hide();
+    $('#menu').show();
+  })
+
+
+  $('#custom-pizza').click(function(){
+    $(".toppings").slideDown();
+  });
+
+  $(".classic-pizza").click(function(){
+    $(".toppings").slideUp();
+  });
+
   $("form#menu").submit(function (event){
     event.preventDefault();
     const name = $('input#name').val();
@@ -141,14 +177,40 @@ $(document).ready(function(){
     const toppings = [];
     const quantity = parseInt($('select[name="quantity"] option:selected').val());
     const instructions = $('textarea#instructions').val();
+    const pizzaStyle = $('input[name="pizza"]:checked').val();
+    let pizzaName = "";
+    //add toppings
     $('input[type="checkbox"]').each(function(){
       if(this.checked) {
         toppings.push($(this).val());
       }
     });
 
+    switch (pizzaStyle) {
+      case ('hawaiian'):
+        toppings.push("chicken", "pineapple");
+        pizzaName = "Hawaiian";
+        break;
+      case ('pepperoni'):
+        toppings.push("cheese", "pepperoni", "tomatoes");
+        pizzaName = "Pepperoni";
+        break;
+      case ('margarita'):
+        toppings.push("cheese", "basil", "tomatoes");
+        pizzaName = "Margarita";
+        break;
+      case ('custom'):
+        $('input[type="checkbox"]').each(function(){
+          if(this.checked) {
+            toppings.push($(this).val());
+          }
+        });
+        pizzaName = "Custom Pizza";
+        break;
+    }
+    
     $('input').each(function() {
-      if ($(this).val() === 'small') {
+      if ($(this).val() === 'small' || $(this).val() === 'custom') {
         $(this).prop('checked',true);
         $(this).parent().addClass('checked');
       } else {
@@ -163,17 +225,13 @@ $(document).ready(function(){
     });
 
     $('#order-name').html(name);
-    let newPizza = new Pizza(toppings, size, quantity, instructions);
+    let newPizza = new Pizza(toppings, size, quantity, instructions, pizzaName);
     newPizza.cost = newPizza.calculatePrice();
-    console.log(newPizza.instructions);
     listOfPizzas.addPizza(newPizza);
-    console.log(newPizza);
-    console.log(listOfPizzas);
     displayPizzas(listOfPizzas);
 
     $('#cart').show();
     $('#toggle-cart').show();
-
 
     $('button#place-order').click(function (){
       $('#main').hide();
@@ -196,6 +254,13 @@ $(document).ready(function(){
     $('input#name').val("");
     listOfPizzas.clear();
   });
+
+  $('button#clear-cart').click(function (){
+    $('#toggle-cart').hide();
+    $("ul#pizzas").empty();
+    listOfPizzas.clear();
+  });
+
 
   $('#toggle-cart').click(function (){
     $('#cart').toggle();

@@ -12,7 +12,7 @@
 
 ## Description
 
-Web-page for pizza company where a user can choose one or more individual toppings (cheese, pepperoni, tomatos, pineapple, etc) and a size to order a pizza and see the final cost.
+Web-page for pizza company where a user can choose one or more individual toppings (cheese, pepperoni, tomatoes, pineapple, etc) and a size to order a pizza and see the final cost.
 
 ## Setup/Installation Requirements
 
@@ -29,15 +29,15 @@ Describe: Pizza()
 
 Test: "It should return a Pizza object with two properties for toppings and size"  
 Code:  
-const myPizza = new Pizza(["chicken","pineapple"], "large", 1, "not spicy");  
+const myPizza = new Pizza(["chicken","pineapple"], "large", 1, "not spicy", "Custom Pizza");  
 myPizza;  
-Expected Output: Pizza {toppings: ['chicken', 'pineapple'], size: 'large', quantity: 1, instructions: 'not spicy', cost: undefined, name: 'Custom Pizza'}
+Expected Output: Pizza {toppings: ['chicken', 'pineapple'], size: 'large', quantity: 1, instructions: 'not spicy', name: 'Custom Pizza', cost: undefined}
 
 Describe: Pizza.prototype.calculatePrice
 
 Test: "It should return price based on the size and the qunatity of the toppings"  
 Code:  
-const myPizza = new Pizza(["chicken","pineapple"], "large", 1, "not spicy");  
+const myPizza = new Pizza(["chicken","pineapple"], "large", 1, "not spicy", "Custom Pizza");
 myPizza.calculatePrice();  
 Expected Output: 17;  
 
@@ -61,7 +61,7 @@ Describe: ListOfPizzas.prototype.addPizza
 
 Test: "It should return a list of pizzas"  
 Code:  
-const myPizza = new Pizza(["chicken","pineapple"], "large", 1, "not spicy");  
+const myPizza = new Pizza(["chicken","pineapple"], "large", 1, "not spicy", "Custom Pizza"); 
 let listOfPizzas = new ListOfPizzas();  
 listOfPizzas.addPizza(myPizza);  
 listOfPizzas;  
@@ -71,17 +71,17 @@ Describe: ListOfPizzas.prototype.findPizza
 
 Test: "It should return a piiza object with matching id"  
 Code:  
-const myPizza = new Pizza(["chicken","pineapple"], "large", 1, "not spicy");  
+const myPizza = new Pizza(["chicken","pineapple"], "large", 1, "not spicy", "Custom Pizza");  
 let listOfPizzas = new ListOfPizzas();  
 listOfPizzas.addPizza(myPizza);  
 listOfPizzas.findPizza(1);  
-Expected Output: Pizza {toppings: ['chicken', 'pineapple'], size: 'large', quantity: 1, instructions: 'not spicy', cost: undefined, name: 'Custom Pizza'}
+Expected Output: Pizza {toppings: ['chicken', 'pineapple'], size: 'large', quantity: 1, instructions: 'not spicy', name: 'Custom Pizza', cost: undefined}
 
 Describe: ListOfPizzas.prototype.calculateTotal
 
 Test: "It will return the total cost of all the pizzas in the list of pizzas"  
 Code:  
-const myPizza = new Pizza(["chicken","pineapple"], "large", 2, "not spicy", 15);  
+const myPizza = new Pizza(["chicken","pineapple"], "large", 1, "not spicy", "Custom Pizza", 15); 
 let listOfPizzas = new ListOfPizzas();  
 listOfPizzas.addPizza(myPizza);  
 listOfPizzas.calculateTotal();  
@@ -91,7 +91,7 @@ Describe:  ListOfPizzas.prototype.clear
 
 Test: "It will delete all the pizzas from the list "  
 Code:  
-const myPizza = new Pizza(["chicken","pineapple"], "large", 2, "not spicy", 15);  
+const myPizza = new Pizza(["chicken","pineapple"], "large", 1, "not spicy", "Custom Pizza", 15); 
 let listOfPizzas = new ListOfPizzas();  
 listOfPizzas.addPizza(myPizza);  
 listOfPizzas.clear();  
@@ -101,13 +101,20 @@ Describe:  ListOfPizzas.prototype.deletePizza
 
 Test: "It will delete a pizza with passed id"  
 Code:  
-const myPizza = new Pizza(["chicken","pineapple"], "large", 2, "not spicy", 15);  
-const myPizza2 = new Pizza(["chicken","pineapple"], "large", 2, "not spicy", 15);  
+const myPizza = new Pizza(["chicken","pineapple"], "large", 1, "not spicy", "Custom Pizza", 15); 
+const myPizza2 = new Pizza(["chicken","pineapple"], "large", 1, "not spicy", "Custom Pizza", 15); 
 let listOfPizzas = new ListOfPizzas();  
 listOfPizzas.addPizza(myPizza);  
 listOfPizzas.addPizza(myPizza2);  
 listOfPizzas.deletePizza(2);  
 Expected Output: true
+
+Describe: Customer()
+Test: "It should return a Customer object with two properties for name, street, city, and zipcode"  
+Code:  
+const myCustomer = new Customer("name", "street", "city", "zipcode");  
+myCustomer;  
+Expected Output: Customer {name: 'name', street: 'street', city: 'city', zipcode: 'zipcode'}
 ## Known Bugs
 
 * 
