@@ -24,10 +24,10 @@ ListOfPizzas.prototype.findPizza = function(id) {
 ListOfPizzas.prototype.calculateTotal = function() {
   let total = 0;
   for (let i = 1; i <= this.currentId; i++) {
-    const pizza = this.findPizza(i);
-    console.log(pizza);
-    total += pizza.cost * pizza.quantity;
-    console.log(pizza.cost);
+    if (this.pizzas[i] !== undefined) {
+      const pizza = this.findPizza(i);
+      total += pizza.cost * pizza.quantity;
+    }
   }
   return total;
 };
@@ -84,10 +84,27 @@ let listOfPizzas = new ListOfPizzas();
 function displayPizzas(listOfPizzasToDisplay) {
   let pizzasList = $("ul#pizzas");
   let html = "";
+  let remove = "";
+  let name = "";
+  let size = "";
+  let toppings = "";
+  let instructions = "";
+
   Object.keys(listOfPizzasToDisplay.pizzas).forEach(function(key) {
     const pizza = listOfPizzasToDisplay.findPizza(key);
-    html += "<span class=" + pizza.id + " 'remove'> X</span><li class='pizza-name' id=" + pizza.id + ">" + pizza.quantity + " x " + pizza.name + "<span class='right'> $ " + pizza.cost + ".00</span></li><li class='hidden " + pizza.id +"'>Size: " + pizza.size + "</li><li class='hidden " + pizza.id +"'>Toppings: " + pizza.toppings.join(", ") + "</li><li class='hidden " + pizza.id +"'>Special Instructions: " + pizza.instructions + "</li>";
+    remove = "<span class='" + pizza.id + "'><span class='remove'>X</span></span>";
+    name = "<li class='pizza-name' id='" + pizza.id + "'>" + pizza.quantity + " x " + pizza.name + "<span class='right'> $ " + pizza.cost + ".00</span></li>";
+    size = "<li class='hidden " + pizza.id +"'>Size: " + pizza.size + "</li>"
+    console.log(pizza.toppings);
     console.log(pizza.instructions);
+    if (pizza.toppings.length !== 0) {
+      toppings = "<li class='hidden " + pizza.id +"'>Toppings: " + pizza.toppings.join(", ") + "</li>"
+    }
+
+    if(pizza.instructions !== "") {
+      instructions = "<li class='hidden " + pizza.id +"'>Special Instructions: " + pizza.instructions + "</li>";
+    }
+    html += remove + name + size + toppings + instructions;
   });
   pizzasList.html(html);
   $("#total").html(listOfPizzasToDisplay.calculateTotal() + ".00");
@@ -96,7 +113,16 @@ function displayPizzas(listOfPizzasToDisplay) {
 function attachPizzaListeners() {
   $("ul#pizzas").on("click", "li", function(){
     $('.hidden').hide();
-    $('li.' + this.id + '.hidden').toggle();
+    $('li.' + this.id).toggle();
+  });
+
+
+  $("ul#pizzas").on("click", "span", function(){
+    let id = ($(this).attr('class'));
+    listOfPizzas.deletePizza(id);
+    $('#' + id).remove();
+    $('.' + id).remove();
+    $("#total").html(listOfPizzas.calculateTotal() + ".00");
   });
 }
 
@@ -173,13 +199,6 @@ $(document).ready(function(){
 
   $('#toggle-cart').click(function (){
     $('#cart').toggle();
-  });
-
-  $(".remove").click(function(){
-    let id = $(this).parent().attr("id");
-    listOfPizzas.deletePizza(id);
-    $('#' + id).clear();
-    console.log("clear");
   });
   
 });
