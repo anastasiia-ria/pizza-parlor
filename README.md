@@ -17,7 +17,7 @@ Web-page for pizza company where a user can choose one or more individual toppin
 
 ## Setup/Installation Requirements
 
-* Click on or copy and paste this [GitHub Page](https://anastasiia-ria.github.io/pizza-parlor/) into your preferred browser:<br>https://anastasiia-ria.github.io/neighbor/
+* Click on or copy and paste this [GitHub Page](https://anastasiia-ria.github.io/pizza-parlor/) into your preferred browser:<br>https://anastasiia-ria.github.io/pizza-parlor/
 
   ***OR***
 
