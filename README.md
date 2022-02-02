@@ -50,19 +50,20 @@ Describe: Pizza.prototype.calculatePrice
 
 Test: "It should return price based on the size and the qunatity of the toppings"  
 Code:  
-const myPizza = new Pizza(["chicken","pineapple"], "large", 1, "not spicy", "Custom Pizza");
+const myPizza = new Pizza(["chicken","pineapple"], "large", 1, "not spicy", "Custom Pizza");  
 myPizza.calculatePrice();  
-Expected Output: 17;  
+Expected Output: 17;
 
 Test: "It should return price based on the size and the qunatity of the toppings"  
 Code:  
-const myPizza = new Pizza(["tomatoes"], "small", 1, "not spicy", "Custom Pizza");
+const myPizza = new Pizza(["tomatoes"], "small", 1, "not spicy", "Custom Pizza");  
 myPizza.calculatePrice();  
 Expected Output: 6;
 
-Test: "It should return price based on the size and the qunatity of the toppings"
-Code:
-const myPizza = new Pizza(["tomatoes","sausages","mushrooms","cheese"], "medium", 1, "not spicy", "Custom Pizza"); myPizza.calculatePrice();
+Test: "It should return price based on the size and the qunatity of the toppings"  
+Code:  
+const myPizza = new Pizza(["tomatoes","sausages","mushrooms","cheese"], "medium", 1, "not spicy", "Custom Pizza");  
+myPizza.calculatePrice();  
 Expected Output: 14;
 
 Describe: ListOfPizzas()
@@ -76,7 +77,7 @@ Expected Output: ListOfPizzas {customer: undefined, pizzas: {…}, currentId: 0
 Describe: ListOfPizzas.prototype.assignId
 
 Test: "It should return a current id of the pizza object in ListOfPizzas"  
-Code:   
+Code:  
 let listOfPizzas = new ListOfPizzas();  
 listOfPizzas.assignId();  
 Expected Output: 1
@@ -85,7 +86,7 @@ Describe: ListOfPizzas.prototype.addPizza
 
 Test: "It should return a list of pizzas"  
 Code:  
-const myPizza = new Pizza(["chicken","pineapple"], "large", 1, "not spicy", "Custom Pizza"); 
+const myPizza = new Pizza(["chicken","pineapple"], "large", 1, "not spicy", "Custom Pizza");  
 let listOfPizzas = new ListOfPizzas();  
 listOfPizzas.addPizza(myPizza);  
 listOfPizzas;  
@@ -105,17 +106,17 @@ Describe: ListOfPizzas.prototype.calculateTotal
 
 Test: "It will return the total cost of all the pizzas in the list of pizzas"  
 Code:  
-const myPizza = new Pizza(["chicken","pineapple"], "large", 1, "not spicy", "Custom Pizza", 15); 
+const Pizza1 = new Pizza(["chicken","pineapple"], "large", 2, "not spicy", "Custom Pizza", 17);   
 let listOfPizzas = new ListOfPizzas();  
-listOfPizzas.addPizza(myPizza);  
+listOfPizzas.addPizza(Pizza1); 
 listOfPizzas.calculateTotal();  
-Expected Output: 30
+Expected Output: 34
 
 Describe:  ListOfPizzas.prototype.clear
 
 Test: "It will delete all the pizzas from the list "  
 Code:  
-const myPizza = new Pizza(["chicken","pineapple"], "large", 1, "not spicy", "Custom Pizza", 15); 
+const myPizza = new Pizza(["chicken","pineapple"], "large", 1, "not spicy", "Custom Pizza", 17);  
 let listOfPizzas = new ListOfPizzas();  
 listOfPizzas.addPizza(myPizza);  
 listOfPizzas.clear();  
@@ -125,8 +126,8 @@ Describe:  ListOfPizzas.prototype.deletePizza
 
 Test: "It will delete a pizza with passed id"  
 Code:  
-const myPizza = new Pizza(["chicken","pineapple"], "large", 1, "not spicy", "Custom Pizza", 15); 
-const myPizza2 = new Pizza(["chicken","pineapple"], "large", 1, "not spicy", "Custom Pizza", 15); 
+const myPizza = new Pizza(["chicken","pineapple"], "large", 1, "not spicy", "Custom Pizza", 17);  
+const myPizza2 = new Pizza(["chicken","pineapple"], "large", 1, "not spicy", "Custom Pizza", 17);  
 let listOfPizzas = new ListOfPizzas();  
 listOfPizzas.addPizza(myPizza);  
 listOfPizzas.addPizza(myPizza2);  
@@ -148,6 +149,7 @@ Code:
 const myCustomer = new Customer("name", "street", "city", "zipcode");  
 myCustomer;  
 Expected Output: Customer {name: 'name', street: 'street', city: 'city', zipcode: 'zipcode'}
+
 ## Known Bugs
 
 * Layout is not adjusted for small screens
