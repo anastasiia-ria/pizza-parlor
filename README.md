@@ -54,6 +54,12 @@ const myPizza = new Pizza(["chicken","pineapple"], "large", 1, "not spicy", "Cus
 myPizza.calculatePrice();  
 Expected Output: 17;  
 
+Test: "It should return price based on the size and the qunatity of the toppings"  
+Code:  
+const myPizza = new Pizza(["tomatoes"], "small", 1, "not spicy", "Custom Pizza");
+myPizza.calculatePrice();  
+Expected Output: 6;  
+
 Describe: ListOfPizzas()
 
 Test: "It should return properties of ListOfPizzas objects"  
