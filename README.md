@@ -112,6 +112,16 @@ listOfPizzas.addPizza(Pizza1);
 listOfPizzas.calculateTotal();  
 Expected Output: 34
 
+Test: "It will return the total cost of all the pizzas in the list of pizzas"  
+Code:  
+const Pizza1 = new Pizza(["chicken","pineapple"], "large", 1, "not spicy", "Custom Pizza", 17);  
+const Pizza2 = new Pizza(["tomatoes","mushrooms"], "medium", 2, "not spicy", "Custom Pizza", 12);  
+let listOfPizzas = new ListOfPizzas();  
+listOfPizzas.addPizza(Pizza1); 
+listOfPizzas.addPizza(Pizza2);
+listOfPizzas.calculateTotal();  
+Expected Output: 41
+
 Describe:  ListOfPizzas.prototype.clear
 
 Test: "It will delete all the pizzas from the list "  
