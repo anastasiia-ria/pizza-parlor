@@ -23,7 +23,7 @@ Web-page for pizza company where a user can choose one or more individual toppin
 
 * Clone this repository to your Desktop:
   1. Your computer will need to have GIT installed. If you do not currently have GIT installed, follow [these](https://docs.github.com/en/get-started/quickstart/set-up-git) directions for installing and setting up GIT.
-  2. Once GIT is installed, clone this repository by typing following commands in your browser:
+  2. Once GIT is installed, clone this repository by typing following commands in your command line:
       ```
       $ cd ~/Desktop
       $ git clone https://github.com/anastasiia-ria/pizza-parlor.git
